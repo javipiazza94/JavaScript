@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relación 1 JavaScript - Condicionales y bucles</title>
+</head>
+<body>
+
+  <script>
+    /*
+    //EJERCICIO 1 : Pedir al usuario que introduzca dos números (haciendo uso de prompt) y realizar la suma de esos dos números
+    var NUM1 = Number (prompt ("Introduce un numero"));
+    var NUM2 = Number (prompt ("Introduce un numero"));
+    var result = NUM1+NUM2;
+    document.write(result + "<br>");   
+
+
+    //EJERCICIO 2 : Ejercicio 2: Escribe un programa que pida el nombre del usuario y escriba por pantalla “Hola + el nombre del usuario”.
+    var nombre = prompt("Introduce tu puto nombre, perro");
+    document.write("Hola " + nombre + " perro <br>");
+
+
+    //EJERCICIO 3 : Escribe un programa que pida dos números y escriba en pantalla cual es el número mayor.
+    var NUM3 = Number (prompt ("Introduce un numero"));
+    var NUM4 = Number (prompt ("Introduce un numero"));
+    if(NUM3>NUM4)
+    document.write(NUM3 + "<br>");
+    else 
+    document.write(NUM4 + "<br>");
+
+
+    //EJERCICIO 4 : Escribe un programa que pida un número y diga si es divisible entre dos.
+    var NUM5 = Number (prompt ("Introduce un numero"));
+    if (NUM5%2==0)
+    document.write("El numero es divisible entre 2 <br>");
+    else 
+    document.write("El numero NO es divisible entre 2 <br>");
+
+
+    //EJERCICIO 5 : Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7, por alguno de ellos.
+    var NUM6 = Number (prompt ("Introduce un numero"));
+    if (NUM6%2==0)
+    document.write("El numero es divisible entre 2 <br>");
+    else if (NUM6%3==0)
+    document.write("El numero es divisible entre 3 <br>");
+    else if (NUM6%5==0)
+    document.write("El numero es divisible entre 5 <br>");
+    else if (NUM6%7==0)
+    document.write("El numero es divisible entre 7 <br>");
+
+
+    //EJERCICIO 6 Escribe un programa igual que el anterior pero que nos diga por cuál de los cuatro números es divisible el número que ha introducido el usuario.
+    var NUM7 = Number (prompt ("Introduce un numero"));
+    var NUM8 = Number (prompt ("Introduce un segundo numero"));
+    if (NUM7%NUM8==0)
+    document.write("Son divisibles <br>");
+    else 
+    document.write("No son divisibles <br>");
+
+    
+    //EJERCICIO 7 : Escribe un programa que lee tres notas de un alumno, calcula la media e indica si está suspenso o aprobado, la nota debe ser mayor o igual a 5.
+    var NUM9 = Number (prompt ("Introduce una nota "));
+    var NUM10 = Number (prompt ("Introduce una segunda nota"));
+    var NUM11 = Number (prompt ("Introduce una tercera nota"));
+    var media = (NUM9+NUM10+NUM10)/3;
+    document.write(media + "<br>"); 
+
+    if (media >= 5)
+    document.write("Esta aprobado <br>");
+
+      else
+      document.write("Esta suspenso <br>");
+
+      
+    //EJERCICIO 8  Escribe un programa que calcule el área de un triángulo de tres lados, los lados serán dados por el usuario.
+    var BASE = Number (prompt ("Introduce la base "));
+    var ALTURA = Number (prompt ("Introduce la altura"));
+    var area_triangulo = (BASE*ALTURA)/2;
+    document.write(area_triangulo + "<br>"); 
+
+    
+    //EJERCICIO 9 : Escribe una declaración condicional para encontrar el signo del producto de tres números enteros.
+    var NUM12 = Number (prompt ("Introduce un numero"));
+    var NUM13 = Number (prompt ("Introduce un numero"));
+    var NUM14 = Number (prompt ("Introduce un numero"));
+    var producto = NUM12*NUM13*NUM14;
+    document.write(producto + "<br>"); 
+
+    if (Math.sign(producto)==1)
+    document.write("Es positivo" + "<br>");
+    else 
+    document.write("Es negativo" + "<br>");
+
+
+    //EJERCICIO 10: Pedir un texto por pantalla y mostrarlo en mayúsculas, de la siguiente forma:
+    var texto = prompt ("Introduce un Texto");
+    document.write("<h1>" + texto.toUpperCase() + "</h1>");
+
+
+    //EJERCICIO 11: Escribe un programa usando bucles que imprima la siguiente pirámide:
+    var sp="&nbsp;";
+    var esp="";
+    var n=0;
+
+		for (i = 0; i < 10; i++) {
+      esp=esp+sp;
+			if (i == 0) {
+				document.write(esp+esp+esp+esp+esp +"*"+esp+esp+esp+ "<br>");
+			}
+			if (i == 1) {
+				document.write("*"+esp+esp+esp+"*"+esp+"<br>");
+			}
+			if (i == 2) {
+				document.write("*"+esp+esp+"*"+esp+"<br>");
+			}
+			if (i == 3) {
+				document.write("*****" + "<br>");
+			}
+			if (i == 4) {
+				document.write("*"+esp+"*"+esp+"<br>");
+			}
+			if (i == 5) {
+				document.write("*"+esp+"*"+esp+"<br>");
+			}
+			if (i == 6) {
+				document.write("*"+esp+"*"+esp+"<br>");
+			}
+			if (i == 7) {
+				document.write("*"+esp+"*"+esp+"<br>");
+			}
+			if (i == 8) {
+				document.write("*"+esp+"*" + "<br>");
+			}
+			if (i == 9) {
+				document.write("*"+esp+"*" + "<br>");
+			}
+		}
+
+      
+    //EJERCICIO 12: Escribe un programa que repita los números enteros del 1 al 100, pero para los múltiplos de 4 imprima la palabra “FrontEnd” en lugar de su número, para los múltiplos de 7 imprima “BackEnd” y para los múltiplos de los dos imprima “FullStack” y el número. Se debería de ver de la siguiente manera:
+    var nombre1 = "Front End";
+    var nombre2 = "Back End";
+    var nombre3 = "Full Stack";
+    
+    for (i = 0; i < 100; i++) {
+      if (i%4==0) {
+        document.write(nombre1+ "<br>");
+      }
+      else if (i%7==0) {
+        document.write(nombre2+ "<br>");
+      }
+      else if (i%4==0||i%7==0) {
+        document.write(i + nombre3+ "<br>");
+      } else{
+        document.write(i + "<br>");
+      }
+      
+
+    }
+    
+    //EJERCICIO 13: Calcular el factorial de un número entero que introduzca el usuario. La función factorial consiste en multiplicar todos los factores de un número, sería: n*(n-1)*(n-2)*...*1.
+
+    var NUM15 = Number (prompt ("Introduce un numero"));
+
+    for (i = NUM15; i >0; i--){
+      document.write((NUM15=NUM15*i) + "<br>");      
+    }
+   
+
+    //EJERCICIO 14: Realiza un programa que muestre los múltiplos de 8 comprendidos entre dos números que se solicitan al usuario, no importa el orden en el que los inserte el usuario, siempre se representarán de menor a mayor, ambos incluidos. Por ejemplo, si los números introducidos son el 1 y el 100, mostrará los siguiente:
+    var NUM16 = Number (prompt ("Introduce un numero"));
+    var NUM17 = Number (prompt ("Introduce un numero"));
+   
+   if (NUM16<NUM17){
+    for (i = NUM16; i <NUM17; i++){
+      if (i%8==0){
+      document.write(i + "<br>");
+      }
+    }
+  }
+  if (NUM16>NUM17){
+    for (i = NUM17; i <NUM16; i++){
+      if (i%8==0){
+      document.write(i + "<br>");
+      }
+    }
+  }
+   
+  //EJERCICIO 15:Decir si un número introducido por pantalla es primo o no.
+  var NUM18 = Number (prompt ("Introduce un numero"));
+  var CONT = 0;
+  for (i = 1; i<=NUM18; i++){
+   if ( (NUM18%i)==0){
+     CONT++;
+      }
+   }
+   if (CONT==2){
+    document.write("El numero es primo" + "<br>");
+   }else {
+    document.write("El numero no es primo" + "<br>");
+   }
+   
+
+  //EJERCICIO 16:Calcular un número aleatorio del 1 al 10 (usando Math.round (Math.random()*10)), pedir al usuario que adivine ese número hasta que lo acierte
+
+  var NUM20 = Number (prompt ("Introduce un numero del 0 al 10"));
+  var NUM19 = Math.round(Math.random()*10);
+  var terminado = false;
+
+  do{
+  if (NUM19==NUM20) {
+    document.write("Has acertado");
+    terminado= true;
+  } else {
+    document.write("Has fallado");
+  }
+
+  }while(!terminado);
+
+
+
+  //EJERCICIO 17: Comprobar si un número de tres dígitos que ingresaremos nosotros por pantalla es un número Amstrong. Un número Amstrong es un entero tal que la suma de los cubos de sus dígitos da igual al número en sí.
+  let sum = 0;
+  const number = prompt('Introduce un numero de 3 cifras');
+
+let temp = number;
+while (temp > 0) {
+    let remainder = temp % 10;
+
+    sum += remainder * remainder * remainder;
+
+   
+    temp = parseInt(temp / 10); 
+}
+if (sum == number) {
+  document.write("es un numero Armstrong");
+}
+else {
+  document.write(" NO es un numero Armstrong");
+}
+  
+  */
+ 
+  //EJERCICIO 18: Realiza un programa que cuente el número de vocales que tiene un texto que introduzcamos por pantalla, para ello tendrás que poner el texto en minúscula usando toLowerCase() o en mayúscula usando toUpperCase(), para obtener un caracter en concreto de una cadena usaremos charAt().
+
+
+  //EJERCICIO 19: Introducir una frase por pantalla, a continuación, pedir al usuario que introduzca una palabra de esa frase por pantalla para sustituirla por otra nueva palabra que va a introducir por pantalla. Reemplazamos esa palabra y mostraremos el resultado por pantalla, para ello usaremos replace(palabra1, palabra2). Se mostrará de la siguiente manera (usando <h3>):
+
+  </script>
+  
+</body>
+</html>

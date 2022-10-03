@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "div1">
+        <form method="get"> 
+            <fieldset>
+                <legend><h2>RELLENA ESTO</h2></legend>
+            <p>
+                Nombre: <input type="text" id = "nombre"  size="25" placeholder="Que pasa guapeton"> <!--Para introducir elementos en el formulario-->
+            </p>
+            <p>
+                Contraseña <input type="password" id ="contraseña" size="22"> <!--Metemos la contraseña con su tamaño-->
+            </p>
+               <input type = "submit"  value="Rellenar datos" onclick = "enviarsaludo()">
+        </fieldset>
+    </div>
+    <div id = "div2">
+
+        <h1>Añadir frase</h1>
+        <p id = "pi">
+            Cositas guapas
+        </p>
+        <form> 
+               <textarea id="SelvaPingas" cols="50" rows="2" placeholder="Cogeme esta"></textarea>
+               <input type = "reset" value="Rellenar datos" onclick = "unirTexto()">
+        </form>
+
+    </div>
+
+
+    <script>
+        function enviarsaludo(){
+            var nombre = document.getElementById("nombre");
+            var contraseña = document.getElementById("contraseña");
+            var texto = "<h2> Hola "+nombre.value+" "+contraseña.value+" gracias por rellenar esta puta mierda </h2>";
+            document.write(texto);
+        }
+        function unirTexto(){
+            var nuevafrase = document.getElementById("SelvaPingas").value;
+            var texto = document.createTextNode(" "+ nuevafrase+ ".");
+            var parrafo = document.getElementById("pi");
+            parrafo.appendChild(texto)
+        }
+    </script>
+
+</body>
+</html>

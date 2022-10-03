@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista ordenada</title>
+</head>
+<body>
+<!--EJERCICIO 2-->
+<div id="2">
+        
+    <H1>Añade nuevos elementos a la lista</H1>
+
+    <ol id="lista"></ol>
+    <h3> Lista:</h3>
+ 
+    <input type="text" id="elemento" />
+    <button onclick="Anadir()" class="buttonClass"> Anadir</button>
+    <button onclick="Borrar()" class="buttonClass"> Borrar</button>
+</div>
+    <script>
+        function Anadir() {
+            var lista = document.getElementById("lista");
+            var elemento = document.getElementById("elemento");
+            var li = document.createElement("li");
+            li.setAttribute('id', elemento.value);
+            li.appendChild(document.createTextNode(elemento.value));
+            lista.appendChild(li);
+        }
+        function Borrar() {
+            var borrar = document.getElementById("lista");
+            var elemento = document.getElementById("elemento");
+            var item = document.getElementById(elemento.value);
+            borrar.removeChild(item);
+        }
+    </script>
+</body>
+</html>

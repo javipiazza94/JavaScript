@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>titulos y parrafos</title>
+</head>
+<body>
+     <!--EJERCICIO 1-->
+     <span id="1">
+
+    <H2> Nuevo titulo:</H2>
+        <textarea id="titulo" cols="50" rows="2" placeholder="Título"></textarea>
+    <p> <b>Nuevo parrafo:</b> </p>
+        <textarea id="parrafo" cols="50" rows="2" placeholder="texto"></textarea>
+        <input type = "reset" value="Rellenar" size="25" onclick = "Anadir()">
+    <h2 id="titulonuevo"> </h2>
+    <p id="parrafonuevo">  </p>
+
+      </span>
+    <script>
+        function Anadir(){
+            //rellenamos el h2
+            var nuevotitulo = document.getElementById("titulo").value;
+            var titulo = document.createTextNode(nuevotitulo);
+            var h2 = document.getElementById("titulonuevo");
+            h2.appendChild(titulo);
+
+            //rellenamos el parrafo
+            var nuevoparrafo = document.getElementById("parrafo").value;
+            var texto = document.createTextNode(" "+ nuevoparrafo+ ".");
+            var parrafo = document.getElementById("parrafonuevo");
+            parrafo.appendChild(texto);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <div id="3">
+        <H1>Añade casillas a la tabla</H1>
+
+        <table border="1" id="tablita">
+            <tr id="columnas">
+                <th id="th1"><b>Equipo</b></th>
+                <th id="th2"><b>Division</b></td>
+                <th id="th3"><b>Ciudad</b></th>
+            </tr>
+
+        </table>
+
+            <p><b>Nombre del equipo:</b> </p>
+             <textarea id="equipo" cols="50" rows="2" placeholder="Nombre del equipo"></textarea>
+             <p><b>Division:</b></p>
+            <textarea id="division" cols="50" rows="2" placeholder="Division"></textarea>
+            <p><b>Ciudad:</b> </p>
+            <textarea id="ciudad" cols="50" rows="2" placeholder="Ciudad"></textarea>
+            <p><b>Goles:</b></p>
+            <textarea id="goles" cols="50" rows="2" placeholder="Goles"></textarea>
+             
+            <input type = "reset" value="Rellenar elemento" size="25" onclick = "Anade()">
+            <input type = "reset" value="Borrar elemento" size="25" onclick = "Borra()">
+            <input type = "reset" value="Reemplaza elemento" size="25" onclick = "Reemplaza()">
+            <input type = "reset" value="Rellena columna" size="25" onclick = "columna()">
+    
+    </div>
+    <script>
+        //mencionamos la tabla 
+        var tabla = document.getElementById("tablita");
+        function Anade(){
+            //creamos la fila en la que metemos los datos
+            var tr = document.createElement("tr");
+            //rellenamos el equipo
+            var equipo= document.createElement("td");
+            var nuevoequipo = document.getElementById("equipo").value;
+            var nombreEquipo = document.createTextNode(nuevoequipo);
+            equipo.appendChild(nombreEquipo);
+            tr.appendChild(equipo);
+
+            //rellenamos la division
+            var division= document.createElement("td");
+            var nuevadivision = document.getElementById("division").value;
+            var nombreDivision = document.createTextNode(nuevadivision);
+            division.appendChild(nombreDivision);
+            tr.appendChild(division);
+
+            //rellenamos la ciudad
+            var ciudad= document.createElement("td");
+            var nuevaciudad = document.getElementById("ciudad").value;
+            var nombreCiudad = document.createTextNode(nuevaciudad);
+            ciudad.appendChild(nombreCiudad);
+            tr.appendChild(ciudad);
+
+            //rellenamos los goles
+            var gol = document.createElement("td");
+            var nuevogol = document.getElementById("goles").value;
+            var textogol = document.createTextNode(nuevogol); 
+            gol.appendChild(textogol)
+            tr.appendChild(gol);
+
+            //metemos la fila en la tabla
+            tabla.appendChild(tr);
+        }
+        function columna(){
+            var columna = document.getElementById("columnas");
+            var th = document.createElement("th");
+            var gol = document.createTextNode("Goles"); 
+            th.appendChild(gol)
+            columna.appendChild(th);
+        }
+    
+        function Borra(){
+            tabla.removeChild(tabla.lastChild);
+        }
+        function Reemplaza(){
+            var columna = document.getElementById("columnas");
+            var Division = document.getElementById("th2");
+            var Categoria = document.createElement("th");
+            var nombre = document.createTextNode("Categoria"); 
+            Categoria.appendChild(nombre)
+            columna.replaceChild(Categoria,Division);
+        }
+    </script>
+   
+    
+</body>
+</html>

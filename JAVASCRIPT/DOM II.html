@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista1">
+        <li id="item1"> Alcaraz</li>
+        <li id="item2"> Nadal</li>
+        <li id="item3"> Djokovic</li>
+        <li id="item4"> Federer</li>
+        <li id="item5"> Wawrinka</li>
+        <li id="item6"></li>
+
+       <p>Eliminar un elemento li de su padre, e insertarlo de nuevo el mismo elemento. Así se vería nuestra página: </p>
+
+        <input type = "reset" value="Rellenar" size="25" onclick = "Anadir()">
+        <input type = "reset" value="Borrar" size="25" onclick = "Borrar()">
+
+        <div>
+            <H1 id="titulo">HOLA MUNDO</H1>
+
+            <p> Haga clic para eliminarlo de nuevo o anadirlo </p>
+            <input type = "reset" value="Rellenar" size="25" onclick = "Anadir2()">
+            <input type = "reset" value="Borrar" size="25" onclick = "Borrar2()">
+
+        </div>
+        
+     </ul>
+    <script>
+        //EJERCICIO 1
+        var x = document.body.nodeName;
+        document.write(x);
+
+        //EJERCICIO 2
+        var y = document.body.childNodes;
+        document.write(y);
+
+        //EJERCICIO 3
+        var valores = document.getElementById("lista1").value;
+        document.write(valores);
+
+        //EJERCICIO 4
+        //Buscamos por id
+        var lista = document.getElementById ("lista1");
+
+        //Asignamos a variable item el elemento con id ='item2'de la lista
+        var item = lista.querySelector ('#item2');
+        lista.removeChild (item);
+
+        //EJERCICIO 5
+        var item = document.getElementById("item3");
+        item.parentNode.removeChild(item);
+
+        //EJERCICIO 6
+        function Anadir(){
+            //EXTRAEMOS VALOR PADRE
+            var parent = document.getElementById("lista1");
+            //EXTRAEMOS VALOR
+            var item1 = document.getElementById("item1").value;
+            var item6 = document.getElementById("item6");
+            //AÑADIMOS VALOR AL CUERPO NUEVO CREADO DESDE HTML
+            parent.replaceChild(item6, item1);
+           
+        }
+        function Borrar(){
+            var borrar = document.getElementById("lista1");
+            var item = borrar.querySelector ('#item6');
+            borrar.removeChild (item);
+        }
+
+          //EJERCICIO 7
+        function Borrar2(){
+            var borrar = document.getElementById("titulo");
+            borrar.remove();
+        }
+        function Anadir2(){
+            var titulo= document.createElement("h1");
+            var anadir = document.getElementById("titulo").value; 
+            anadir.appendChild(titulo);
+        }
+
+
+    </script>
+</body>
+</html>
